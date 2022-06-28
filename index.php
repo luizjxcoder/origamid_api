@@ -1,3 +1,3 @@
 <?php wp_head();?>
-<p>Api</p>
+<h1>Api VIKING GODS</h1>
 <?php wp_footer();?>
