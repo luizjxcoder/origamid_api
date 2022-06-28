@@ -10,8 +10,8 @@ function api_photo_post($request) {
   }
 
   $nome = sanitize_text_field($request['nome']);
-  $peso = sanitize_text_field($request['referencia']);
-  $idade = sanitize_text_field($request['caracteristicas']);
+   $referencia = sanitize_text_field($request['referencia']);
+   $caracteristicas = sanitize_text_field($request['caracteristicas']);
   $files = $request->get_file_params();
 
   if (empty($nome) || empty($referencia) || empty($caracteristicas) || empty($files)) {

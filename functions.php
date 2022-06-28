@@ -17,13 +17,21 @@ require_once $dirbase . '/endpoints/stats_get.php';
 
 require_once $dirbase . '/endpoints/password.php';
 
-function change_api() {
-  return 'json';
+//HACK função para cortar as imagens de acordo com a forma que o clinete deseja que elas aparecão no site
+update_option('large_size_w', 1000);
+update_option('large_size_h', 1000);
+update_option('large_size_crop', 1);
+
+
+function change_api()
+{
+   return 'json';
 }
 add_filter('rest_url_prefix', 'change_api');
 
-function expire_token() {
-  return time() + (60 * 60 * 24);
+function expire_token()
+{
+   return time() + (60 * 60 * 24);
 }
 add_action('jwt_auth_expire', 'expire_token');
 
